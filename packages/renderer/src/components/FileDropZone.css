@@ -1,0 +1,149 @@
+.file-drop-zone {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-drop-zone:hover {
+  border-color: #0066cc;
+  background-color: #f8faff;
+}
+
+.file-drop-zone.drag-over {
+  border-color: #0066cc;
+  background-color: #e7f3ff;
+  border-style: solid;
+  transform: scale(1.02);
+}
+
+.drop-zone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.upload-icon,
+.drop-icon {
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.file-drop-zone:hover .upload-icon {
+  color: #0066cc;
+}
+
+.drop-icon {
+  color: #0066cc;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.drop-zone-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.drop-zone-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.select-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.select-button:hover {
+  background-color: #0052a3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .file-drop-zone {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .file-drop-zone:hover {
+    background-color: #1a1a2e;
+    border-color: #4da6ff;
+  }
+  
+  .file-drop-zone.drag-over {
+    background-color: #1a2332;
+    border-color: #4da6ff;
+  }
+  
+  .upload-icon,
+  .drop-icon {
+    color: #9ca3af;
+  }
+  
+  .file-drop-zone:hover .upload-icon {
+    color: #4da6ff;
+  }
+  
+  .drop-icon {
+    color: #4da6ff;
+  }
+  
+  .drop-zone-content h3 {
+    color: #f9fafb;
+  }
+  
+  .drop-zone-content p {
+    color: #9ca3af;
+  }
+}
+
+@media (max-width: 768px) {
+  .file-drop-zone {
+    padding: 32px 16px;
+    min-height: 150px;
+  }
+  
+  .drop-zone-content h3 {
+    font-size: 16px;
+  }
+  
+  .drop-zone-content p {
+    font-size: 13px;
+  }
+  
+  .upload-icon,
+  .drop-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,102 @@
+.preset-selector {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.preset-selector h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.preset-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preset-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-option:hover {
+  background-color: #f8f9fa;
+  border-color: #0066cc;
+}
+
+.preset-option input[type="radio"] {
+  margin-top: 2px;
+  accent-color: #0066cc;
+}
+
+.preset-content {
+  flex: 1;
+}
+
+.preset-name {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.preset-description {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.4;
+}
+
+.preset-option:has(input:checked) {
+  background-color: #e7f3ff;
+  border-color: #0066cc;
+}
+
+.preset-option:has(input:checked) .preset-name {
+  color: #0066cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  .preset-selector {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .preset-selector h3 {
+    color: #ffffff;
+  }
+  
+  .preset-option {
+    border-color: #404040;
+  }
+  
+  .preset-option:hover {
+    background-color: #404040;
+    border-color: #4da6ff;
+  }
+  
+  .preset-name {
+    color: #ffffff;
+  }
+  
+  .preset-description {
+    color: #adb5bd;
+  }
+  
+  .preset-option:has(input:checked) {
+    background-color: #1a2332;
+    border-color: #4da6ff;
+  }
+  
+  .preset-option:has(input:checked) .preset-name {
+    color: #4da6ff;
+  }
+}

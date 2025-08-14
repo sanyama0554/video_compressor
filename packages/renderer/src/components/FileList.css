@@ -1,0 +1,173 @@
+.file-list {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.file-list h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.file-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr auto;
+  gap: 16px;
+  padding: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  font-size: 13px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.file-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr auto;
+  gap: 16px;
+  padding: 12px;
+  border-bottom: 1px solid #f8f9fa;
+  align-items: center;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.file-name {
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-size,
+.file-duration,
+.file-resolution {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.file-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+}
+
+.file-progress {
+  position: relative;
+}
+
+.progress-bar {
+  width: 60px;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #0066cc;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.remove-button:hover {
+  color: #dc3545;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e9ecef;
+  border-top: 2px solid #0066cc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.text-green-500 {
+  color: #10b981;
+}
+
+.text-red-500 {
+  color: #ef4444;
+}
+
+@media (prefers-color-scheme: dark) {
+  .file-list {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .file-list h3 {
+    color: #ffffff;
+  }
+  
+  .file-table-header {
+    color: #adb5bd;
+    border-bottom-color: #404040;
+  }
+  
+  .file-table-row {
+    border-bottom-color: #404040;
+  }
+  
+  .file-name {
+    color: #ffffff;
+  }
+  
+  .file-size,
+  .file-duration,
+  .file-resolution {
+    color: #adb5bd;
+  }
+  
+  .progress-text {
+    color: #adb5bd;
+  }
+  
+  .remove-button {
+    color: #adb5bd;
+  }
+}
