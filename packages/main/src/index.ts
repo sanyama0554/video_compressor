@@ -10,10 +10,19 @@ import { setupIpcHandlers } from './ipc/handlers';
 
 // Enable live reload for Electron in development
 if (isDev) {
-  require('electron-reload')(__dirname, {
-    electron: join(__dirname, '..', 'node_modules', '.bin', 'electron'),
-    hardResetMethod: 'exit',
-  });
+  try {
+    const electronPath = process.platform === 'win32' 
+      ? join(__dirname, '..', '..', '..', 'node_modules', '.bin', 'electron.cmd')
+      : join(__dirname, '..', '..', '..', 'node_modules', '.bin', 'electron');
+    
+    require('electron-reload')(__dirname, {
+      electron: electronPath,
+      hardResetMethod: 'exit',
+    });
+    console.log('Hot reload enabled');
+  } catch (error) {
+    console.log('electron-reload not found, skipping hot reload:', (error as Error).message);
+  }
 }
 
 class VideoCompressorApp {
